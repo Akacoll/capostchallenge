@@ -1,0 +1,23 @@
+{
+  "name": "newapi",
+  "version": "1.0.0",
+  "description": "Simple node app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "Gabriel <gabriel.akacoll@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "fast-csv": "^2.4.1",
+    "google-libphonenumber": "^3.2.2",
+    "mongoose": "^5.4.22",
+    "promised-csv": "^1.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
