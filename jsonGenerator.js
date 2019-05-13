@@ -196,17 +196,19 @@ exports.json = function csvToJson(csvFile){
       // console.log(JSON.stringify(o));
       console.log("on end");
     });
-    // setTimeout( function(){
-    //   console.log(JSON.stringify(o));
-    //   console.log("on return");
-    // }, 100 );
-    fs.writeFile("./output.json", JSON.stringify(o), function(err) {
-      if(err) {
-          return console.log(err);
-      }
-      console.log("The file was saved!");
-    }); 
-    setTimeout( function(){}, 100 );
+    setTimeout( function(){
+      console.log(JSON.stringify(o[0]));
+      console.log("on return");
+      fs.writeFile("./output.json", JSON.stringify(o[0]), function(err) {
+        // fs.writeFile("./output.json", '{"a":1,"b":2}', function(err) {
+          if(err) {
+              return console.log(err);
+          }
+          console.log("The file was saved!");
+        }); 
+    }, 100 );
+    
+    // setTimeout( function(){}, 100 );
     // return(JSON.stringify(o));
     // return(o);
   }
