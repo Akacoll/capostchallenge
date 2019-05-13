@@ -13,15 +13,15 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 // POST http://localhost:8080/api/csv
 app.post('/api/csv', function(req, res) {
     let csv = req.body.csvFile;
-    // receives the csv path and returns a json
+    // receives the csv path and writes in output.json
     jsonGen.json(csv);
     let json;
+    // reads output.json and saves in var json
     fs.readFile('./output.json', function (err, data) {
         if (err) throw err;
         json = data;
     });
     setTimeout(function(){
-        console.log("Log app.js: " + json);
         res.send(JSON.parse(json));
     },100);
 });
